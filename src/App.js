@@ -16,6 +16,8 @@ function App() {
 
       <h1>This is Instagram Clone</h1>
       <Posts />
+      <Posts />
+      <Posts />
     </div>
   );
 }
