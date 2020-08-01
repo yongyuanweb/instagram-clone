@@ -1,7 +1,7 @@
 import React from "react";
 import "./post.css";
 import Avatar from "@material-ui/core/Avatar";
-function Posts() {
+function Posts({ username, imageURL, caption }) {
   return (
     <div className="post">
       <div className="post_header">
@@ -10,17 +10,14 @@ function Posts() {
           src="/static/images/avator/1.png"
           alt="username"
         ></Avatar>
-        <h3>UseName</h3>
+        <h3>{username}</h3>
         {/* Header-> Avators +userName */}
         {/*Images*/}
       </div>
-      <img
-        class="post_img"
-        src="https://s3.ap-south-1.amazonaws.com/clecotech/static_images/react-one.jpg"
-      ></img>
+      <img class="post_img" src={imageURL}></img>
       {/*UseName +caption */}
       <h4 className="post_text">
-        <strong>UserName</strong>:Caption
+        <strong>{username}</strong>:{caption}
       </h4>
     </div>
   );

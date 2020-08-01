@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./App.css";
 import Posts from "./Posts";
 function App() {
+  const [posts, setPosts] = useState([
+    {
+      username: "Yongyuan Ma",
+      caption: "First Post for the app",
+      imageURL:
+        "https://s3.ap-south-1.amazonaws.com/clecotech/static_images/react-one.jpg",
+    },
+    {
+      username: "Yongyuan Ma",
+      caption: "Second Post for the app",
+      imageURL:
+        "https://s3.ap-south-1.amazonaws.com/clecotech/static_images/react-one.jpg",
+    },
+  ]);
   return (
     <div className="app">
       {/*Header */}
@@ -15,9 +29,13 @@ function App() {
       </div>
 
       <h1>This is Instagram Clone</h1>
-      <Posts />
-      <Posts />
-      <Posts />
+      {posts.map((post) => (
+        <Posts
+          username={post.username}
+          caption={post.caption}
+          imageURL={post.imageURL}
+        />
+      ))}
     </div>
   );
 }
