@@ -1,22 +1,19 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 
 import "./App.css";
 import Posts from "./Posts";
+import {db} from "./firebase";
 function App() {
-  const [posts, setPosts] = useState([
-    {
-      username: "Yongyuan Ma",
-      caption: "First Post for the app",
-      imageURL:
-        "https://s3.ap-south-1.amazonaws.com/clecotech/static_images/react-one.jpg",
-    },
-    {
-      username: "Yongyuan Ma",
-      caption: "Second Post for the app",
-      imageURL:
-        "https://s3.ap-south-1.amazonaws.com/clecotech/static_images/react-one.jpg",
-    },
-  ]);
+  const [posts, setPosts] = useState([]);
+
+  useEffect(()=>{ 
+    //onSnapshot updates database whenever the database changed
+    db.collection("posts").onSnapshot(snapshot=>{
+      setPosts(snapshot.docs.map(doc=>doc.data()))
+      })
+  },[]) //run once if [] is leaving blank,run everytime is posts change or update
+   
+  
   return (
     <div className="app">
       {/*Header */}
