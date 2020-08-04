@@ -14,7 +14,7 @@ function Posts({ username, imageURL, caption }) {
         {/* Header-> Avators +userName */}
         {/*Images*/}
       </div>
-      <img class="post_img" src={imageURL}></img>
+      <img className="post_img" src={imageURL}></img>
       {/*UseName +caption */}
       <h4 className="post_text">
         <strong>{username}</strong>:{caption}
