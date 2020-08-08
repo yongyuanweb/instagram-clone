@@ -6,9 +6,16 @@
   background-color: #fafafa;
 }
 .app_header {
+  position: sticky;
+  top: 0;
   background-color: white;
   padding: 20px;
   border-bottom: 1px solid lightgray;
+  object-fit: contain;
+  display: flex;
+  justify-content: space-between;
+}
+.app_headerImage {
   object-fit: contain;
 }
 .app_signup {
@@ -18,4 +25,12 @@
 .app_signin {
   display: flex;
   flex-direction: column;
+}
+.app_posts {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+.app_postsRight {
+  margin: 20px;
 }
